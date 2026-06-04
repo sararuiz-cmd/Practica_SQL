@@ -42,3 +42,10 @@ create table Personal.Medicos(
 	deleted_at datetime default getdate()
 )
 go
+--Especialidades 
+create table Personal.Especialidades(
+	id_especialidad int entity(1,1) primary key,
+	nombre_especialidad nvarchar(50) not null
+
+)
+go
