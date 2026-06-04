@@ -71,3 +71,15 @@ create table Locacion.Habitaciones(
 	deleted_at datetime default getdate()
 )
 go
+--Tratamiento
+create table Monitoreo.Tratamiento(
+	id_tratamiento int entity(1,1) primary key,
+	nombre_tratamiento nvarchar(50) not null,
+	paciente nvarchar(50),
+	medico nvarchar(50),
+	created_at datetime default getdate(),
+	updated_at datetime default getdate(),
+	deleted_at datetime default getdate()
+
+)
+go
