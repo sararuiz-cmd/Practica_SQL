@@ -3,10 +3,9 @@ go
 if exists(select 1 from sys.databases where name like 'HospitalDB')
 begin
 	drop database HospitalDB
-end 
+end
 go
 create database HospitalDB
-go
 --Mostrar todas las bases de datos existentes.
 select * from sys.databases
 use HospitalDB
@@ -29,5 +28,17 @@ create table Personal.Pacientes(
 	created_at datetime default getdate(),
 	uptaded_at datetime default getdate(),
 	deleted_atcdate datetime default getdate()
+)
+go
+--Medicos
+create table Personal.Medicos(
+	id_medico int identity(1,1) primary key,
+	nombre_medico nvarchar(50) not null,
+	correo_medico nvarchar(50),
+	edad_medico int,
+	salario decimal (10,2) not null,
+	created_at datetime default getdate(),
+	updated_at datetime default getdate(),
+	deleted_at datetime default getdate()
 )
 go
