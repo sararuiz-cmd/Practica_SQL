@@ -112,3 +112,24 @@ create table Monitoreo.Tratamiento(
 	constraint fk_medicamento foreign key (medicamento) references Monitoreo.Medicamento (id_medicamento)
 )
 go
+--Modificacion de estructuras
+--Pacientes
+alter table Personal.Pacientes add telefono int
+go
+alter table Personal.Pacientes add direccion nvarchar(200)
+go
+alter table Personal.Pacientes add genero bit --(1 hombre, 0 mujer)
+go
+alter table Personal.Pacientes add tipo_sangre varchar(2)
+go
+alter table Personal.Pacientes add fecha_nacimiento datetime
+go
+alter table Personal.Pacientes add direccion_paciente nvarchar(100)
+go
+alter table Personal.Pacientes alter column nombre_paciente nvarchar(100)
+go
+alter table Personal.Pacientes alter column direccion_paciente nvarchar(200)
+go
+--Medicos
+alter table Personal.Medicos add genero bit 
+alter table P
