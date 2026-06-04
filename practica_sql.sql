@@ -138,12 +138,12 @@ alter table Personal.Medicos add fecha_nacimiento_medicos datetime
 go
 alter table Personal.Medicos add direccion_medico nvarchar(100)
 go
-alter table Personal.Pacientes alter column nombre_medico nvarchar(100)
+alter table Personal.Medicos add experiencia nvarchar(100)
 go
-alter table Personal.Pacientes alter column direccion_medico nvarchar(200)
+alter table Personal.Medicos add turnos nvarchar(100)
+go
+alter table Personal.Medicos add observaciones nvarchar(100)
+go
+alter table Personal.Medicos drop column observaciones
 go
 
-select * from Personal.Pacientes
-
-alter table Personal.Pacientes drop column fecha_nacimiento_medicos
-go
