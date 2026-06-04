@@ -77,6 +77,18 @@ create table Monitoreo.Tratamiento(
 	nombre_tratamiento nvarchar(50) not null,
 	paciente nvarchar(50),
 	medico nvarchar(50),
+	costo decimal(10,2) not null,
+	created_at datetime default getdate(),
+	updated_at datetime default getdate(),
+	deleted_at datetime default getdate()
+
+)
+go
+--Medicamentos
+create table Monitoreo.Medicamento(
+	id_medicamento int entity(1,1) primary key,
+	nombre_medicamento nvarchar(50) not null,
+	tratamiento nvarchar(50),
 	created_at datetime default getdate(),
 	updated_at datetime default getdate(),
 	deleted_at datetime default getdate()
