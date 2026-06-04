@@ -57,6 +57,17 @@ create table Monitoreo.Citas(
 	id_cita int entity(1,1) primary key,
 	paciente nvarchar(50) not null,
 	medico nvarchar(50) not null,
+	created_at datetime default getdate(),
+	updated_at datetime default getdate(),
+	deleted_at datetime default getdate()
 )
 go
 --Habitaciones
+create table Locacion.Habitaciones(
+	id_habitacion int entity(1,1) primary key,
+	paciente nvarchar(50) not null,
+	created_at datetime default getdate(),
+	updated_at datetime default getdate(),
+	deleted_at datetime default getdate()
+)
+go
