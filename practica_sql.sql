@@ -147,3 +147,11 @@ go
 alter table Personal.Medicos drop column observaciones
 go
 
+--Citas
+alter table Monitoreo.Citas add estado varchar(50)
+go
+alter table Monitoreo.Citas add costo_consulta decimal(10,2)
+go
+alter table Monitoreo.Citas alter column costo_consulta int
+go
+
