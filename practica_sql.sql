@@ -132,4 +132,18 @@ alter table Personal.Pacientes alter column direccion_paciente nvarchar(200)
 go
 --Medicos
 alter table Personal.Medicos add genero bit 
-alter table P
+alter table Personal.Medicos add tipo_sangre_medicos varchar(2)
+go
+alter table Personal.Medicos add fecha_nacimiento_medicos datetime
+go
+alter table Personal.Medicos add direccion_medico nvarchar(100)
+go
+alter table Personal.Pacientes alter column nombre_medico nvarchar(100)
+go
+alter table Personal.Pacientes alter column direccion_medico nvarchar(200)
+go
+
+select * from Personal.Pacientes
+
+alter table Personal.Pacientes drop column fecha_nacimiento_medicos
+go
