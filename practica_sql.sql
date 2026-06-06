@@ -155,3 +155,6 @@ go
 alter table Monitoreo.Citas alter column costo_consulta int
 go
 
+--Habitaciones
+alter table Locacion.Habitaciones add disponibilidad bit
+go
