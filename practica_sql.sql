@@ -158,3 +158,13 @@ go
 --Habitaciones
 alter table Locacion.Habitaciones add disponibilidad bit
 go
+
+--Tabla temporal
+create table dbo.Temp(
+	id_tabla int identity(1,1) primary key clustered,
+	validfrom datetime2 generated always as row start,
+	validto datetime2 generated always as row end,
+	period for system_time (validfrom,validto)
+)
+with (system_versioning = on (history_table = dbo.TempHistory))
+go
