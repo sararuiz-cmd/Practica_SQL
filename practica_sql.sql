@@ -168,3 +168,8 @@ create table dbo.Temp(
 )
 with (system_versioning = on (history_table = dbo.TempHistory))
 go
+--Eliminar tabla temporal
+alter table dbo.Temp set (system_versioning=off)
+go
+drop table dbo.Temp
+go
