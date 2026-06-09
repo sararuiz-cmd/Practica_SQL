@@ -65,5 +65,12 @@ create table Proyecto.TEmpleadoProyecto(
 
 --Modificacion de estructuras
 alter table Empleados.TEmpleado add cEmail varchar(40)
-
-
+go
+alter table Empleados.TEmpleado add telefono int
+go
+alter table Empleados.TEmpleado alter column cNombre nvarchar(100)
+go
+alter table Empleados.TEmpleado alter column cApellido nvarchar(100)
+go
+alter table Empleados.TEmpleado add cDireccion nvarchar(100)
+go
