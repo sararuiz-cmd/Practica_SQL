@@ -233,17 +233,18 @@ go
 --Insertar 10 médicos
 insert into Personal.Medicos(nombre_medico, correo_medico, edad_medico, salario, genero, tipo_sangre_medicos, fecha_nacimiento_medicos, direccion_medico, turnos)
 values
-('roberto alvarez', 'roberto.alvarez@hospital.com', 45, 35000.00, 1, 'o+', '1979-03-12', 'managua', 'matutino'),
-('claudia herrera', 'claudia.herrera@hospital.com', 38, 32000.00, 0, 'a+', '1986-06-20', 'masaya', 'vespertino'),
-('miguel castro', 'miguel.castro@hospital.com', 50, 40000.00, 1, 'b+', '1974-01-10', 'granada', 'nocturno'),
-('paola mendoza', 'paola.mendoza@hospital.com', 41, 36000.00, 0, 'o-', '1983-09-05', 'leon', 'matutino'),
-('andres navarro', 'andres.navarro@hospital.com', 35, 30000.00, 1, 'a-', '1989-11-18', 'esteli', 'vespertino'),
-('karla espinoza', 'karla.espinoza@hospital.com', 44, 37000.00, 0, 'b-', '1980-04-22', 'chinandega', 'nocturno'),
-('fernando ruiz', 'fernando.ruiz@hospital.com', 39, 33000.00, 1, 'o+', '1985-02-14', 'rivas', 'matutino'),
-('valeria solis', 'valeria.solis@hospital.com', 36, 31000.00, 0, 'a+', '1988-07-30', 'carazo', 'vespertino'),
-('hugo martinez', 'hugo.martinez@hospital.com', 48, 39000.00, 1, 'o-', '1976-12-09', 'boaco', 'nocturno'),
-('natalia vega', 'natalia.vega@hospital.com', 33, 29500.00, 0, 'b+', '1991-05-17', 'matagalpa', 'matutino')
+('roberto alvarez', 'roberto.alvarez@hospital.com', 45, 35000.00, 1, 'o+', '19790312', 'managua', 'matutino'),
+('claudia herrera', 'claudia.herrera@hospital.com', 38, 32000.00, 0, 'a+', '19860620', 'masaya', 'vespertino'),
+('miguel castro', 'miguel.castro@hospital.com', 50, 40000.00, 1, 'b+', '19740110', 'granada', 'nocturno'),
+('paola mendoza', 'paola.mendoza@hospital.com', 41, 36000.00, 0, 'o-', '19830905', 'leon', 'matutino'),
+('andres navarro', 'andres.navarro@hospital.com', 35, 30000.00, 1, 'a-', '19891118', 'esteli', 'vespertino'),
+('karla espinoza', 'karla.espinoza@hospital.com', 44, 37000.00, 0, 'b-', '19800422', 'chinandega', 'nocturno'),
+('fernando ruiz', 'fernando.ruiz@hospital.com', 39, 33000.00, 1, 'o+', '19850214', 'rivas', 'matutino'),
+('valeria solis', 'valeria.solis@hospital.com', 36, 31000.00, 0, 'a+', '19880730', 'carazo', 'vespertino'),
+('hugo martinez', 'hugo.martinez@hospital.com', 48, 39000.00, 1, 'o-', '19761209', 'boaco', 'nocturno'),
+('natalia vega', 'natalia.vega@hospital.com', 33, 29500.00, 0, 'b+', '19910517', 'matagalpa', 'matutino')
 go
+
 
 --Insertar 5 especialidades médicas
 insert into Personal.Especialidades(nombre_especialidad, id_medico)
@@ -293,33 +294,34 @@ go
 --Insertar 20 pacientes
 insert into Personal.Pacientes(nombre_paciente, correo_paciente, edad_paciente, habitacion, telefono, direccion, genero, tipo_sangre, fecha_nacimiento, direccion_paciente)
 values
-('carlos mejia', 'carlos.mejia@gmail.com', 30, 1, 88881111, 'managua', 1, 'o+', '1994-02-10', 'barrio san judas'),
-('maria lopez', 'maria.lopez@gmail.com', 25, 2, 88882222, 'masaya', 0, 'a+', '1999-05-15', 'reparto san juan'),
-('jose ramirez', 'jose.ramirez@gmail.com', 42, 3, 88883333, 'granada', 1, 'b+', '1982-08-20', 'calle central'),
-('ana castillo', 'ana.castillo@gmail.com', 37, 4, 88884444, 'leon', 0, 'o-', '1987-11-12', 'colonia primero de mayo'),
-('pedro torres', 'pedro.torres@gmail.com', 55, 5, 88885555, 'esteli', 1, 'a-', '1969-01-25', 'barrio el rosario'),
-('lucia flores', 'lucia.flores@gmail.com', 28, 6, 88886666, 'chinandega', 0, 'b-', '1996-04-18', 'zona central'),
-('manuel cruz', 'manuel.cruz@gmail.com', 33, 7, 88887777, 'rivas', 1, 'o+', '1991-07-22', 'barrio la puebla'),
-('sofia reyes', 'sofia.reyes@gmail.com', 21, 8, 88888888, 'carazo', 0, 'a+', '2003-09-09', 'villa esperanza'),
-('daniel mora', 'daniel.mora@gmail.com', 46, 9, 88889999, 'boaco', 1, 'o-', '1978-03-03', 'sector norte'),
-('elena campos', 'elena.campos@gmail.com', 52, 10, 88990000, 'matagalpa', 0, 'b+', '1972-12-28', 'barrio guanuca'),
-('fernando salinas', 'fernando.salinas@gmail.com', 29, 1, 88991111, 'managua', 1, 'a-', '1995-06-14', 'villa libertad'),
-('gabriela rios', 'gabriela.rios@gmail.com', 31, 2, 88992222, 'masaya', 0, 'o+', '1993-10-01', 'monimbo'),
-('ricardo perez', 'ricardo.perez@gmail.com', 40, 3, 88993333, 'granada', 1, 'a+', '1984-05-21', 'calle el comercio'),
-('veronica diaz', 'veronica.diaz@gmail.com', 26, 4, 88994444, 'leon', 0, 'b-', '1998-08-08', 'subtiava'),
-('julio morales', 'julio.morales@gmail.com', 60, 5, 88995555, 'esteli', 1, 'o-', '1964-04-30', 'barrio panama soberana'),
-('camila ortega', 'camila.ortega@gmail.com', 24, 6, 88996666, 'chinandega', 0, 'a+', '2000-01-17', 'reparto los angeles'),
-('oscar palma', 'oscar.palma@gmail.com', 47, 7, 88997777, 'rivas', 1, 'b+', '1977-09-13', 'barrio san francisco'),
-('isabel navas', 'isabel.navas@gmail.com', 34, 8, 88998888, 'carazo', 0, 'o+', '1990-02-26', 'jinotepe centro'),
-('marco gutierrez', 'marco.gutierrez@gmail.com', 53, 9, 88999999, 'boaco', 1, 'a-', '1971-07-19', 'sector sur'),
-('patricia luna', 'patricia.luna@gmail.com', 44, 10, 88770000, 'matagalpa', 0, 'b+', '1980-11-11', 'barrio el progreso')
+('carlos mejia', 'carlos.mejia@gmail.com', 30, 1, 88881111, 'managua', 1, 'o+', '19940210', 'barrio san judas'),
+('maria lopez', 'maria.lopez@gmail.com', 25, 2, 88882222, 'masaya', 0, 'a+', '19990515', 'reparto san juan'),
+('jose ramirez', 'jose.ramirez@gmail.com', 42, 3, 88883333, 'granada', 1, 'b+', '19820820', 'calle central'),
+('ana castillo', 'ana.castillo@gmail.com', 37, 4, 88884444, 'leon', 0, 'o-', '19871112', 'colonia primero de mayo'),
+('pedro torres', 'pedro.torres@gmail.com', 55, 5, 88885555, 'esteli', 1, 'a-', '19690125', 'barrio el rosario'),
+('lucia flores', 'lucia.flores@gmail.com', 28, 6, 88886666, 'chinandega', 0, 'b-', '19960418', 'zona central'),
+('manuel cruz', 'manuel.cruz@gmail.com', 33, 7, 88887777, 'rivas', 1, 'o+', '19910722', 'barrio la puebla'),
+('sofia reyes', 'sofia.reyes@gmail.com', 21, 8, 88888888, 'carazo', 0, 'a+', '20030909', 'villa esperanza'),
+('daniel mora', 'daniel.mora@gmail.com', 46, 9, 88889999, 'boaco', 1, 'o-', '19780303', 'sector norte'),
+('elena campos', 'elena.campos@gmail.com', 52, 10, 88990000, 'matagalpa', 0, 'b+', '19721228', 'barrio guanuca'),
+('fernando salinas', 'fernando.salinas@gmail.com', 29, 1, 88991111, 'managua', 1, 'a-', '19950614', 'villa libertad'),
+('gabriela rios', 'gabriela.rios@gmail.com', 31, 2, 88992222, 'masaya', 0, 'o+', '19931001', 'monimbo'),
+('ricardo perez', 'ricardo.perez@gmail.com', 40, 3, 88993333, 'granada', 1, 'a+', '19840521', 'calle el comercio'),
+('veronica diaz', 'veronica.diaz@gmail.com', 26, 4, 88994444, 'leon', 0, 'b-', '19980808', 'subtiava'),
+('julio morales', 'julio.morales@gmail.com', 60, 5, 88995555, 'esteli', 1, 'o-', '19640430', 'barrio panama soberana'),
+('camila ortega', 'camila.ortega@gmail.com', 24, 6, 88996666, 'chinandega', 0, 'a+', '20000117', 'reparto los angeles'),
+('oscar palma', 'oscar.palma@gmail.com', 47, 7, 88997777, 'rivas', 1, 'b+', '19770913', 'barrio san francisco'),
+('isabel navas', 'isabel.navas@gmail.com', 34, 8, 88998888, 'carazo', 0, 'o+', '19900226', 'jinotepe centro'),
+('marco gutierrez', 'marco.gutierrez@gmail.com', 53, 9, 88999999, 'boaco', 1, 'a-', '19710719', 'sector sur'),
+('patricia luna', 'patricia.luna@gmail.com', 44, 10, 88770000, 'matagalpa', 0, 'b+', '19801111', 'barrio el progreso')
 go
+
 
 --Insertar pacientes con todos los campos
 insert into Personal.Pacientes(nombre_paciente, correo_paciente, edad_paciente, habitacion, created_at, uptaded_at, deleted_at, telefono, direccion, genero, tipo_sangre, fecha_nacimiento, direccion_paciente)
 values
-('raul zamora', 'raul.zamora@gmail.com', 39, 1, getdate(), null, null, 88771111, 'managua', 1, 'o+', '1985-06-06', 'carretera norte'),
-('silvia fuentes', 'silvia.fuentes@gmail.com', 27, 2, getdate(), null, null, 88772222, 'masaya', 0, 'a-', '1997-03-15', 'barrio san miguel')
+('raul zamora', 'raul.zamora@gmail.com', 39, 1, getdate(), null, null, 88771111, 'managua', 1, 'o+', '19850606', 'carretera norte'),
+('silvia fuentes', 'silvia.fuentes@gmail.com', 27, 2, getdate(), null, null, 88772222, 'masaya', 0, 'a-', '19970315', 'barrio san miguel')
 go
 
 --Insertar 15 citas
@@ -494,4 +496,70 @@ update Personal.Pacientes
 set tipo_sangre = 'ab',
 	uptaded_at = getdate()
 where id_paciente = 1
+go
+
+--Modulo delete
+--Eliminar un paciente específico
+delete from Personal.Pacientes
+where id_paciente = 22
+go
+
+--Eliminar una cita
+delete from Monitoreo.Citas
+where id_cita = 7
+go
+
+--Eliminar un medicamento
+delete from Monitoreo.Medicamento
+where id_medicamento = 14
+go
+
+--Eliminar una habitación
+delete from Locacion.Habitaciones
+where id_habitacion = 12
+go
+
+--Eliminar un tratamiento
+delete from Monitoreo.Tratamiento
+where id_tratamiento = 14
+go
+
+--Eliminar citas canceladas
+delete from Monitoreo.Citas
+where estado = 'cancelada'
+go
+
+--Eliminar pacientes sin citas
+delete from Personal.Pacientes
+where id_paciente not in (
+	select id_paciente
+	from Monitoreo.Citas
+)
+go
+
+--Eliminar habitaciones vacías
+delete from Locacion.Habitaciones
+where disponibilidad = 1
+and paciente = 'sin asignar'
+go
+
+--Eliminar medicamentos vencidos
+delete from Monitoreo.Medicamento
+where tratamiento = 'vencido'
+go
+
+--Eliminar registros de prueba
+delete from Personal.Pacientes
+where nombre_paciente like '%prueba%'
+or correo_paciente like '%prueba%'
+go
+
+delete from Personal.Medicos
+where nombre_medico like '%prueba%'
+or correo_medico like '%prueba%'
+go
+
+delete from Monitoreo.Medicamento
+where nombre_medicamento like '%prueba%'
+or tratamiento like '%prueba%'
 go
