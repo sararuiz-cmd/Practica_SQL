@@ -21,14 +21,16 @@ create table Ubicacion.TDepartamento(
 	created_at datetime default getdate(),
 	updated_at datetime,
 	deleted_at datetime
-)go
+)
+go
 create table Empleados.TCargo(
 	nCargoID int identity(1,1) primary key,
 	cNombreCargo nvarchar(100) not null unique,
 	created_at datetime default getdate(),
 	updated_at datetime,
 	deleted_at datetime
-)go
+)
+go
 create table Empleados.TEmpleado(
 	nEmpleadoID int identity(1,1) primary key,
 	cNIF varchar(8) not null unique,
@@ -44,7 +46,8 @@ create table Empleados.TEmpleado(
 	constraint ck_salario check(nSalario>300),
 	constraint fk_departamento foreign key(nDepartamentoID) references Ubicacion.TDepartamento(nDepartamentoID),
 	constraint fk_cargo foreign key(nCargoID) references Empleados.TCargo(nCargoID)
-)go
+)
+go
 create table Proyecto.TProyecto(
 	id_proyecto int identity(1,1) primary key,
 	nombre_proyecto nvarchar(100) not null,
@@ -54,14 +57,16 @@ create table Proyecto.TProyecto(
 	updated_at datetime,
 	deleted_at datetime
 
-)go
+)
+go
 create table Proyecto.TEmpleadoProyecto(
 	id_proyecto int not null,
 	id_empleado int not null,
 	constraint pk_proyecto_empleado primary key(id_proyecto,id_empleado),
 	constraint fk_proyecto foreign key (id_proyecto) references Proyecto.TProyecto(id_proyecto),
 	constraint fk_empleado foreign key (id_empleado) references Empleados.TEmpleado(nEmpleadoID)
-)go
+)
+go
 
 --Modificacion de estructuras
 alter table Empleados.TEmpleado add cEmail varchar(40)
@@ -83,3 +88,11 @@ go
 alter table Empleados.TEmpleado add bActivo  bit default 1
 go
 alter table Empleados.TEmpleado drop column cDireccion
+go
+alter table Empleados.TEmpleado alter column telefono varchar(20)
+go
+alter table Empleados.TEmpleado add cGenero bit 
+go
+alter table Empleados.TEmpleado alter column cGenero char(1)
+go
+alter table Empleados.TEmpleado add constraint ck_genero check(cGenero in 'M' or 'F')
