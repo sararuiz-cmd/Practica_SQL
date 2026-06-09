@@ -54,5 +54,16 @@ create table Proyecto.TProyecto(
 	updated_at datetime,
 	deleted_at datetime
 
-	
 )go
+create table Proyecto.TEmpleadoProyecto(
+	id_proyecto int not null,
+	id_empleado int not null,
+	constraint pk_proyecto_empleado primary key(id_proyecto,id_empleado),
+	constraint fk_proyecto foreign key (id_proyecto) references Proyecto.TProyecto(id_proyecto),
+	constraint fk_empleado foreign key (id_empleado) references Empleados.TEmpleado(nEmpleadoID)
+)go
+
+--Modificacion de estructuras
+alter table Empleados.TEmpleado add cEmail varchar(40)
+
+
