@@ -108,6 +108,7 @@ create table Monitoreo.Tratamiento(
 	created_at datetime default getdate(),
 	updated_at datetime null,
 	deleted_at datetime null,
+	constraint ck_prueba check (id_paciente>0),
 	constraint fk_paciente_tratamiento foreign key (id_paciente) references Personal.Pacientes (id_paciente),
 	constraint fk_medicamento foreign key (medicamento) references Monitoreo.Medicamento (id_medicamento)
 )
@@ -172,4 +173,27 @@ go
 alter table dbo.Temp set (system_versioning=off)
 go
 drop table dbo.Temp
+go
+--Eliminar check
+alter table Monitoreo.Tratamiento drop constraint ck_prueba
+go
+
+--Eliminar una restricción unique
+alter table personal.medicos drop constraint uq_correo_medico
+go
+
+--Eliminar una columna
+alter table personal.medicos drop column experiencia
+go
+
+--Eliminar una foreign key
+alter table monitoreo.tratamiento drop constraint fk_medicamento
+go
+
+--Crear tabla de pruebas
+create table dbo.tabla_pruebas(
+	id_prueba int identity(1,1) primary key,
+	descripcion nvarchar(100),
+	created_at datetime default getdate()
+)
 go
