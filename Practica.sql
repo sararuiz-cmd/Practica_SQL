@@ -95,4 +95,13 @@ alter table Empleados.TEmpleado add cGenero bit
 go
 alter table Empleados.TEmpleado alter column cGenero char(1)
 go
-alter table Empleados.TEmpleado add constraint ck_genero check(cGenero in 'M' or 'F')
+alter table Empleados.TEmpleado add constraint ck_genero check(cGenero in ('M', 'F'))
+go
+alter table Empleados.TEmpleado add dFechaNacimiento datetime
+go
+create table Ubicacion.TSucursal(
+	id_sucursal int identity(1,1) primary key,
+	nombre_sucursal nvarchar(50) not null
+)
+go
+
