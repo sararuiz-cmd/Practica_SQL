@@ -563,3 +563,68 @@ delete from Monitoreo.Medicamento
 where nombre_medicamento like '%prueba%'
 or tratamiento like '%prueba%'
 go
+/*
+Consultas:
+Mostrar todos los pacientes.
+Mostrar todos los médicos.
+Mostrar todas las especialidades.
+Mostrar todas las citas.
+Mostrar pacientes ordenados por apellido.
+Mostrar médicos ordenados por salario.
+Mostrar citas del día actual.
+Mostrar habitaciones disponibles.
+Mostrar cantidad de pacientes registrados.
+Mostrar cantidad de citas por médico.
+*/
+---1
+select * from Personal.Pacientes
+--2
+select * from Personal.Medicos
+--3
+select  * from PErsonal.Especialidades
+--4
+select * from Monitoreo.Citas
+--5
+select * from Personal.Pacientes order by nombre_paciente
+--6
+select * from Personal.Medicos order by salario desc
+--7
+select 
+	c.id_cita,
+	p.nombre_paciente,
+	m.nombre_medico,
+	c.estado,
+	c.costo_consulta,
+	c.created_at as fecha_cita
+from Monitoreo.Citas c
+inner join Personal.Pacientes p on c.id_paciente = p.id_paciente
+inner join Personal.Medicos m on c.id_medico = m.id_medico
+where cast(c.created_at as date) = cast(getdate() as date)
+go
+
+--8
+select 
+	id_habitacion,
+	paciente,
+	disponibilidad
+from Locacion.Habitaciones
+where disponibilidad = 1
+go
+
+--9
+select 
+	count(*) as cantidad_pacientes
+from Personal.Pacientes
+go
+
+--10
+select 
+	m.id_medico,
+	m.nombre_medico,
+	count(c.id_cita) as cantidad_citas
+from Personal.Medicos m
+left join Monitoreo.Citas c on m.id_medico = c.id_medico
+group by 
+	m.id_medico,
+	m.nombre_medico
+go
