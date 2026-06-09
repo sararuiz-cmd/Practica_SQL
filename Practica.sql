@@ -13,6 +13,8 @@ create schema Ubicacion
 go
 create schema Empleados
 go
+create schema Proyecto
+go
 create table Ubicacion.TDepartamento(
 	nDepartamentoID int identity(1,1) primary key,
 	cNombreDepartamento nvarchar(100) not null unique,
@@ -42,4 +44,15 @@ create table Empleados.TEmpleado(
 	constraint ck_salario check(nSalario>300),
 	constraint fk_departamento foreign key(nDepartamentoID) references Ubicacion.TDepartamento(nDepartamentoID),
 	constraint fk_cargo foreign key(nCargoID) references Empleados.TCargo(nCargoID)
+)go
+create table Proyecto.TProyecto(
+	id_proyecto int identity(1,1) primary key,
+	nombre_proyecto nvarchar(100) not null,
+	fecha_inicio datetime not null,
+	fecha_finalizacion datetime,
+	created_at datetime default getdate(),
+	updated_at datetime,
+	deleted_at datetime
+
+	
 )go
