@@ -74,3 +74,12 @@ alter table Empleados.TEmpleado alter column cApellido nvarchar(100)
 go
 alter table Empleados.TEmpleado add cDireccion nvarchar(100)
 go
+alter table Empleados.TEmpleado add nEdad int
+go
+alter table Empleados.TEmpleado add constraint ck_edad check(nEdad between 18 and 65)
+go
+alter table Empleados.TEmpleado add constraint uq_email unique(cEmail)
+go
+alter table Empleados.TEmpleado add bActivo  bit default 1
+go
+alter table Empleados.TEmpleado drop column cDireccion
