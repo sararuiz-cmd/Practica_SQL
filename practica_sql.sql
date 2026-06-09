@@ -185,6 +185,8 @@ go
 --Eliminar una columna
 alter table personal.medicos drop column experiencia
 go
+--Volver a agregar
+alter table personal.medicos add experiencia nvarchar(100)
 
 --Eliminar una foreign key
 alter table monitoreo.tratamiento drop constraint fk_medicamento
@@ -382,4 +384,114 @@ insert into Monitoreo.Tratamiento(nombre_tratamiento, id_paciente, costo, medica
 values
 ('recuperacion muscular', 13, 1000.00, 15, getdate(), getdate(), getdate()),
 ('tratamiento de infeccion', 14, 2100.00, 16, getdate(), getdate(), getdate())
+go
+
+--Sentencia update
+--Actualizar teléfono de un paciente
+update Personal.Pacientes
+set telefono = 87654321,
+	uptaded_at = getdate()
+where id_paciente = 1
+go
+
+--Actualizar dirección de un paciente
+update Personal.Pacientes
+set direccion_paciente = 'barrio altamira, managua',
+	direccion = 'managua',
+	uptaded_at = getdate()
+where id_paciente = 2
+go
+
+--Actualizar salario de un médico
+update Personal.Medicos
+set salario = 38500.00,
+	updated_at = getdate()
+where id_medico = 1
+go
+
+--Actualizar turno de un médico
+update Personal.Medicos
+set turnos = 'nocturno',
+	updated_at = getdate()
+where id_medico = 2
+go
+
+--Cambiar estado de una cita
+update Monitoreo.Citas
+set estado = 'atendida',
+	updated_at = getdate()
+where id_cita = 1
+go
+
+--Actualizar costo de consulta
+update Monitoreo.Citas
+set costo_consulta = 950,
+	updated_at = getdate()
+where id_cita = 2
+go
+
+--Actualizar nombre de especialidad
+update Personal.Especialidades
+set nombre_especialidad = 'cardiologia pediatrica',
+	updated_at = getdate()
+where id_especialidad = 1
+go
+
+--Actualizar disponibilidad de habitación
+update Locacion.Habitaciones
+set disponibilidad = 1,
+	updated_at = getdate()
+where id_habitacion = 1
+go
+
+--Actualizar tratamiento activo
+update Monitoreo.Tratamiento
+set nombre_tratamiento = 'seguimiento activo de hipertension',
+	costo = 1800.00,
+	updated_at = getdate(),
+	deleted_at = null
+where id_tratamiento = 1
+go
+
+--Actualizar medicamento
+update Monitoreo.Medicamento
+set nombre_medicamento = 'acetaminofen',
+	tratamiento = 'dolor y fiebre',
+	updated_at = getdate()
+where id_medicamento = 1
+go
+
+--Actualizar correo de paciente
+update Personal.Pacientes
+set correo_paciente = 'carlos.mejia.actualizado@gmail.com',
+	uptaded_at = getdate()
+where id_paciente = 1
+go
+
+--Actualizar correo de médico
+update Personal.Medicos
+set correo_medico = 'roberto.alvarez.actualizado@hospital.com',
+	updated_at = getdate()
+where id_medico = 1
+go
+
+--Actualizar fecha de cita
+update Monitoreo.Citas
+set created_at = dateadd(day, 5, getdate()),
+	updated_at = getdate()
+where id_cita = 3
+go
+
+--Actualizar experiencia del médico
+update Personal.Medicos
+set experiencia = '12 años de experiencia en atencion hospitalaria',
+	updated_at = getdate()
+where id_medico = 1
+go
+
+--Actualizar tipo de sangre
+update Personal.Pacientes
+set tipo_sangre = 'ab',
+	uptaded_at = getdate()
+where id_paciente = 1
 go
