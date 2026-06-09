@@ -104,4 +104,13 @@ create table Ubicacion.TSucursal(
 	nombre_sucursal nvarchar(50) not null
 )
 go
+--Insercion de datos
+--Departamento
+insert into Ubicacion.TDepartamento(cNombreDepartamento)
+values ('Contabilidad')
+go
+insert into Ubicacion.TDepartamento(cNombreDepartamento)
+values ('Recursos humanos'),('TI'),('Tesoreria'),('Gerencia')
+go
+
 
