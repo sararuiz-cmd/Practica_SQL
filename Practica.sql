@@ -40,6 +40,6 @@ create table Empleados.TEmpleado(
 	updated_at datetime,
 	deleted_at datetime,
 	constraint ck_salario check(nSalario>300),
-
-
+	constraint fk_departamento foreign key(nDepartamentoID) references Ubicacion.TDepartamento(nDepartamentoID),
+	constraint fk_cargo foreign key(nCargoID) references Empleados.TCargo(nCargoID)
 )go
