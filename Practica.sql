@@ -112,5 +112,30 @@ go
 insert into Ubicacion.TDepartamento(cNombreDepartamento)
 values ('Recursos humanos'),('TI'),('Tesoreria'),('Gerencia')
 go
-
+--Cargos
+insert into Empleados.TCargo(cNombreCargo)
+values('Vendedor'),('Secretaria'),('Gerente'),('Desarrollador'),('Contador')
+go
+--Empleados
+insert into Empleados.TEmpleado
+(cNIF, cNombre, cApellido, nDepartamentoID, nCargoID, dFechaContratacion, nSalario, cEmail, telefono, nEdad, bActivo, cGenero, dFechaNacimiento)
+values
+('112365','Max','Martinez',1,2,'20260608',70000,'martinez@gmail.com','126544',20,0,'M','20060418'),
+('112366','Andrea','Lopez',2,3,'20260609',65000,'lopez@gmail.com','126545',21,0,'F','20050214'),
+('112367','Carlos','Gomez',4,1,'20260610',72000,'gomez@gmail.com','126546',26,0,'M','19990830'),
+('112368','Maria','Castillo',5,2,'20260611',68000,'castillo@gmail.com','126547',38,0,'F','19871105'),
+('112369','Jose','Ramirez',1,5,'20260612',75000,'ramirez@gmail.com','126548',33,0,'M','19930601'),
+('112370','Valeria','Mendoza',3,4,'20260613',70000,'mendoza@gmail.com','126549',23,0,'F','20021219'),
+('112371','Luis','Hernandez',2,5,'20260614',80000,'hernandez@gmail.com','126550',51,0,'M','19750425'),
+('112372','Karla','Torres',5,1,'20260615',69000,'torres@gmail.com','126551',35,0,'F','19900912'),
+('112373','Miguel','Navarro',4,3,'20260616',73000,'navarro@gmail.com','126552',22,0,'M','20040107'),
+('112374','Daniela','Reyes',1,4,'20260617',71000,'reyes@gmail.com','126553',60,0,'F','19650720');
+go
+--Proyecto
+insert into Proyecto.TProyecto(nombre_proyecto,fecha_inicio,fecha_finalizacion)
+values('Maro','20250822','20260412')
+go
+insert into Proyecto.TProyecto(nombre_proyecto,fecha_inicio,fecha_finalizacion)
+values('Oracle','20220822','20260422'),('UAM','20070522','20260609')
+go
 
