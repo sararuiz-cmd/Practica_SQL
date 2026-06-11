@@ -259,3 +259,8 @@ go
 delete from Ubicacion.TDepartamento
 where nDepartamentoID = 4;
 go
+--Consultas
+select * from Empleados.TEmpleado order by cApellido
+select * from Empleados.TEmpleado where nSalario>1000
+select * from Empleados.TEmpleado where bActivo=1
+select * from Empleados.TEmpleado where year(dFechaContratacion)=year(getdate())
