@@ -156,3 +156,12 @@ insert into Empleados.TEmpleado
 values
 ('112375','Pedro','Santos',1,1,50000,'pedro@gmail.com','126554',25,1,'M','20010115');
 go
+--Insertar un empleado con correo electrónico
+insert into Empleados.TEmpleado
+(cNIF,cNombre,cApellido,nDepartamentoID,nCargoID,nSalario,cEmail,telefono,nEdad,bActivo,cGenero,dFechaNacimiento)
+values
+('112376','Laura','Ruiz',2,2,52000,'laura.ruiz@gmail.com','126555',28,1,'F','19980220');
+go
+--Insertar un empleado sin indicar estado activo
+--Insertar registros usando múltiples VALUES
+--Intentar insertar un salario negativo y analizar el error
