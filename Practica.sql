@@ -139,17 +139,16 @@ insert into Proyecto.TProyecto(nombre_proyecto,fecha_inicio,fecha_finalizacion)
 values('Oracle','20220822','20260422'),('UAM','20070522','20260609')
 go
 --Empleados a proyecto 
-insert into Proyecto.TEmpleadoProyecto(id_proyecto,id_empleado)
+insert into Proyecto.TEmpleadoProyecto
+(id_proyecto,id_empleado)
 values
-(1,1),
-(1,2),
-(1,3),
-(2,4),
-(2,5),
-(3,6),
-(3,7),
-(3,8);
+(1,11),
+(1,12),
+(2,13),
+(2,15),
+(3,16);
 go
+
 --Empleado valor defecto
 insert into Empleados.TEmpleado
 (cNIF,cNombre,cApellido,nDepartamentoID,nCargoID,nSalario,cEmail,telefono,nEdad,bActivo,cGenero,dFechaNacimiento)
@@ -261,6 +260,49 @@ where nDepartamentoID = 4;
 go
 --Consultas
 select * from Empleados.TEmpleado order by cApellido
+
 select * from Empleados.TEmpleado where nSalario>1000
+
 select * from Empleados.TEmpleado where bActivo=1
+
 select * from Empleados.TEmpleado where year(dFechaContratacion)=year(getdate())
+
+select concat(e.cNombre,' ',e.cApellido) as empleado,
+		round(e.nSalario,2) as salario,
+		u.cNombreDepartamento
+from Empleados.TEmpleado e inner join Ubicacion.TDepartamento u on e.nDepartamentoID=u.nDepartamentoID
+
+select concat(e.cNombre,' ',e.cApellido) as empleado,
+		c.cNombreCargo as cargo
+from Empleados.TEmpleado e inner join Empleados.TCargo c on e.nCargoID=c.nCargoID
+
+
+select concat(e.cNombre,' ',e.cApellido) as empleado,
+	pr.nombre_proyecto
+from Empleados.TEmpleado e inner join Proyecto.TEmpleadoProyecto p on e.nEmpleadoID=p.id_empleado inner join
+Proyecto.TProyecto pr on pr.id_proyecto=p.id_proyecto 
+
+select
+    d.cNombreDepartamento,
+    count(*) as CantidadEmpleados
+from Empleados.TEmpleado e
+inner join Ubicacion.TDepartamento d
+    on e.nDepartamentoID = d.nDepartamentoID
+group by d.cNombreDepartamento;
+
+select
+    d.cNombreDepartamento,
+    avg(e.nSalario) as SalarioPromedio
+from Empleados.TEmpleado e
+inner join Ubicacion.TDepartamento d
+    on e.nDepartamentoID = d.nDepartamentoID
+group by d.cNombreDepartamento;
+
+select
+    d.cNombreDepartamento,
+    max(e.nSalario) as SalarioMaximo,
+    min(e.nSalario) as SalarioMinimo
+from Empleados.TEmpleado e
+inner join Ubicacion.TDepartamento d
+    on e.nDepartamentoID = d.nDepartamentoID
+group by d.cNombreDepartamento;
