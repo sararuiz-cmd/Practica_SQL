@@ -177,3 +177,55 @@ values
 ('112380','Gabriela','Rojas',3,3,65000,'gabriela@gmail.com','126559',40,1,'F','19860311');
 go
 --Intentar insertar un salario negativo y analizar el error
+/*insert into Empleados.TEmpleado
+(cNIF,cNombre,cApellido,nDepartamentoID,nCargoID,nSalario,cEmail,telefono,nEdad,bActivo,cGenero,dFechaNacimiento)
+values
+('112381','Prueba','Error',1,1,-1000,'error@gmail.com','126560',25,1,'M','20000101');
+go
+Lo comentareo para q no me de error
+*/
+--Actualizaciones
+--salario al 10%
+update Empleados.TEmpleado set nSalario=nSalario*1.10
+go
+--20% salario de todos los emp de un dep
+update Empleados.TEmpleado set nSalario=nSalario*1.20 where nDepartamentoID =3
+go
+--Actualizar el correo electrónico de un empleado
+update Empleados.TEmpleado set cEmail='pedro@uam.ni' where nEmpleadoID=1
+go
+--Modificar el cargo de un empleado
+update Empleados.TEmpleado
+set nCargoID = 3
+where cNIF = '112365';
+go
+--Cambiar el departamento de dos empleados
+update Empleados.TEmpleado
+set nDepartamentoID =
+case
+	when cNIF='112366' then 3
+	when cNIF='112367' then 2
+end
+where cNIF in ('112366','112367');
+go
+-- Marcar como inactivos a los empleados con salario inferior a 500. 
+update Empleados.TEmpleado
+set bActivo = 0
+where nSalario < 500;
+go
+--Actualizar la fecha de finalización de un proyecto.
+update Proyecto.TProyecto
+set fecha_finalizacion = '20261231'
+where nombre_proyecto = 'Oracle';
+go
+--Asignar un nuevo proyecto a un empleado. 
+insert into Proyecto.TProyecto
+(nombre_proyecto,fecha_inicio,fecha_finalizacion)
+values
+('Sistema Hospitalario','20260610','20271231');
+go
+insert into Proyecto.TEmpleadoProyecto
+(id_proyecto,id_empleado)
+values
+(4,1);
+go
