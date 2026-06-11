@@ -169,4 +169,11 @@ values
 ('112377','Jorge','Perez',3,4,55000,'jorge@gmail.com','126556',30,'M','19950710');
 go
 --Insertar registros usando múltiples VALUES
+insert into Empleados.TEmpleado
+(cNIF,cNombre,cApellido,nDepartamentoID,nCargoID,nSalario,cEmail,telefono,nEdad,bActivo,cGenero,dFechaNacimiento)
+values
+('112378','Ana','Morales',1,2,48000,'ana@gmail.com','126557',24,1,'F','20020215'),
+('112379','Mario','Flores',2,1,47000,'mario@gmail.com','126558',29,1,'M','19970108'),
+('112380','Gabriela','Rojas',3,3,65000,'gabriela@gmail.com','126559',40,1,'F','19860311');
+go
 --Intentar insertar un salario negativo y analizar el error
