@@ -306,3 +306,41 @@ from Empleados.TEmpleado e
 inner join Ubicacion.TDepartamento d
     on e.nDepartamentoID = d.nDepartamentoID
 group by d.cNombreDepartamento;
+
+select
+    p.nombre_proyecto,
+    count(*) as CantidadEmpleados
+from Proyecto.TEmpleadoProyecto ep
+inner join Proyecto.TProyecto p
+    on ep.id_proyecto = p.id_proyecto
+group by p.nombre_proyecto
+having count(*) > 2;
+
+select *
+from Empleados.TEmpleado
+where cApellido like 'G%';
+
+select
+    cNombre,
+    cApellido,
+    nSalario
+from Empleados.TEmpleado
+order by nSalario desc;
+
+select top 3
+    cNombre,
+    cApellido,
+    nSalario
+from Empleados.TEmpleado
+order by nSalario desc;
+
+select *
+from Empleados.TEmpleado
+where nEdad between 25 and 40;
+
+select count(*) as TotalActivos
+from Empleados.TEmpleado
+where bActivo = 1;
+
+select count(*) as TotalProyectos
+from Proyecto.TProyecto;
