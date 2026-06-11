@@ -163,5 +163,10 @@ values
 ('112376','Laura','Ruiz',2,2,52000,'laura.ruiz@gmail.com','126555',28,1,'F','19980220');
 go
 --Insertar un empleado sin indicar estado activo
+insert into Empleados.TEmpleado
+(cNIF,cNombre,cApellido,nDepartamentoID,nCargoID,nSalario,cEmail,telefono,nEdad,cGenero,dFechaNacimiento)
+values
+('112377','Jorge','Perez',3,4,55000,'jorge@gmail.com','126556',30,'M','19950710');
+go
 --Insertar registros usando múltiples VALUES
 --Intentar insertar un salario negativo y analizar el error
