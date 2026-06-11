@@ -138,4 +138,15 @@ go
 insert into Proyecto.TProyecto(nombre_proyecto,fecha_inicio,fecha_finalizacion)
 values('Oracle','20220822','20260422'),('UAM','20070522','20260609')
 go
-
+--Empleados a proyecto 
+insert into Proyecto.TEmpleadoProyecto(id_proyecto,id_empleado)
+values
+(1,1),
+(1,2),
+(1,3),
+(2,4),
+(2,5),
+(3,6),
+(3,7),
+(3,8);
+go
