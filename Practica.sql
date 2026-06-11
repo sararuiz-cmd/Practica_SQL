@@ -150,3 +150,9 @@ values
 (3,7),
 (3,8);
 go
+--Empleado valor defecto
+insert into Empleados.TEmpleado
+(cNIF,cNombre,cApellido,nDepartamentoID,nCargoID,nSalario,cEmail,telefono,nEdad,bActivo,cGenero,dFechaNacimiento)
+values
+('112375','Pedro','Santos',1,1,50000,'pedro@gmail.com','126554',25,1,'M','20010115');
+go
