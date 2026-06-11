@@ -229,3 +229,33 @@ insert into Proyecto.TEmpleadoProyecto
 values
 (4,1);
 go
+--Eliminacion de objetos
+--Eliminar un empleado específico mediante su NIF
+delete from Empleados.TEmpleado
+where cNIF = '112380';
+go
+-- Eliminar todos los empleados inactivos
+delete ep
+from Proyecto.TEmpleadoProyecto ep
+inner join Empleados.TEmpleado e
+	on ep.id_empleado = e.nEmpleadoID
+where e.bActivo = 0;
+go
+delete from Empleados.TEmpleado
+where bActivo = 0;
+go
+-- Eliminar un proyecto específico
+delete ep
+from Proyecto.TEmpleadoProyecto ep
+inner join Proyecto.TProyecto p
+	on ep.id_proyecto = p.id_proyecto
+where p.nombre_proyecto = 'Oracle';
+go
+--Eliminar las asignaciones de un empleado en la tabla TEmpleadoProyecto
+delete from Proyecto.TEmpleadoProyecto
+where id_empleado = 1;
+go
+-- Eliminar un departamento que no tenga empleados asociados
+delete from Ubicacion.TDepartamento
+where nDepartamentoID = 4;
+go
